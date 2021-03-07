@@ -1,0 +1,32 @@
+<mat-dialog-content>
+    <div>
+        <div class="edit-form">
+          <h4>Edit donation</h4>
+          <form [formGroup] = "editDon">
+            <div class="form-group">
+              <label>Donation</label>
+              <input
+              matInput
+                type="text"
+                class="form-control"
+                placeholder="Enter donation"
+                required
+                formControlName = "DonationTypeOther"
+              />
+            </div>
+          </form>
+          <mat-dialog-actions>
+          <button
+          mat-dialog-close
+          mat-button
+            type="submit"
+            class="badge badge-success mb-2"
+            (click) = "updateDon()"
+          >
+            Update
+          </button>
+          </mat-dialog-actions>
+          <p>{{ message }}</p>
+        </div>
+        </div>
+      </mat-dialog-content>
