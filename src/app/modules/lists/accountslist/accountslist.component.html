@@ -1,0 +1,33 @@
+<div class="col-md-8">
+<mat-selection-list #account [multiple]="false">
+    <h2>Accounts List</h2>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let account of accounts; let i = index"
+        [class.active]="i == currentAccIndex"
+        (click)="setActiveAcc(account, i)"
+      >
+        {{ account.Username }}
+        <button style="float: right; border:0ch; background-color: transparent;" mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+        <button mat-raised-button mat-menu-item (click)="openEditAcc(account)">
+          Edit
+        </button>
+        <button mat-raised-button mat-menu-item (click)="deleteAcc(account)">
+          Delete
+        </button>
+      </mat-menu>
+      </li>
+    </ul>
+    <button mat-raised-button class="m-3 btn btn-sm btn-success" (click)="openAddAcc()">
+      Add new account
+    </button>
+
+    <button class="m-3 btn btn-sm btn-danger">
+      Remove All
+    </button>
+</mat-selection-list>
+</div>

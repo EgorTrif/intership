@@ -1,0 +1,19 @@
+<mat-drawer-container *ngIf="isLoggedIn$ | async" class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <button routerLink = "/home" mat-raised-button>
+        HOME
+      </button>
+      <button  routerLink = "/lists" mat-raised-button>
+        Lists
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Menu
+      </button>
+      <button (click) = "logout()" mat-button style="float: right;">
+        Logout
+      </button>
+    </div>
+  </mat-drawer-container>

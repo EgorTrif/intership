@@ -1,0 +1,10 @@
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin-top: 10px;
+  }
+  ul {
+    height: 350px;
+    overflow: auto;
+    box-sizing: border-box
+  }
